@@ -8,7 +8,7 @@ import { useAuth } from '../contexts/AuthContext';
 const { Title } = Typography;
 
 const Recipes = () => {
-    const [recipes, setRecipes] = useState < Recipe[] > ([]);
+    // const [recipes, setRecipes] = useState < Recipe[] > ([]);
     const { currentUser } = useAuth();
 
     useEffect(() => {
