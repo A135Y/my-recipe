@@ -1,0 +1,28 @@
+.homeLayout {
+  height: 100%;
+}
+
+.homeHeader {
+  color: #fff;
+  padding: 0 1rem;
+}
+
+.homeTitle {
+  margin-bottom: 0 !important;
+  color: #fff !important;
+}
+
+.homeContent {
+  justify-content: center;
+  height: 100%;
+}
+
+.homeSubTitle {
+  text-align: center;
+  margin-bottom: 3rem !important;
+}
+
+.homeSearch {
+  margin-bottom: 2rem !important;
+  width: 100%;
+}

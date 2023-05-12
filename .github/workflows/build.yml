@@ -8,26 +8,27 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 16.x
-    - run: npm ci
-    - run: npm test
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - run: npm ci
+      - run: npm test
   build:
     name: Build and Deploy
     runs-on: ubuntu-latest
     needs: test
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - name: Use Node.js 16.x
-      uses: actions/setup-node@v2
-      with:
-        node-version: 16.x
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+          cache: "npm"
+      - run: npm ci
+      - run: npx prettier --write .
+      - run: npm run build --if-present
     ##deploy using azure web app
     # - name: 'Deploy to Azure Web App'
     #   uses: azure/webapps-deploy@v2
@@ -36,4 +37,3 @@ jobs:
     #     slot-name: 'production'
     #     publish-profile: ${{ secrets.AzureAppService_PublishProfile_XXXXXX }}
     #     package: .
-
