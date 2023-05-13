@@ -5,11 +5,13 @@ const jsonfile = require("jsonfile");
 const { sequelize } = require("../database/db");
 require("dotenv").config();
 const RECIPES_JSON_FILE = process.env.RECIPES_JSON_FILE;
+const path = require("path");
 
 async function importRecipesFromJson() {
   try {
     // Read data from the JSON file
-    const data = await jsonfile.readFile(RECIPES_JSON_FILE);
+    const dataFilePath = path.join(__dirname, "../../data/recipes.json");
+    const data = await jsonfile.readFile(dataFilePath);
     // Insert the data into the database using Sequelize
     await Recipe.bulkCreate(data);
     console.log("Recipes imported successfully");
