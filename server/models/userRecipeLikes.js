@@ -1,4 +1,6 @@
 //create a model for the recipes that a particular user has liked
+const { DataTypes } = require("sequelize");
+const { sequelize } = require("../database/db");
 
 const UserRecipeLikes = sequelize.define("userRecipeLikes", {
   userId: {
@@ -11,4 +13,4 @@ const UserRecipeLikes = sequelize.define("userRecipeLikes", {
   },
 });
 
-export { UserRecipeLikes };
+module.exports = { UserRecipeLikes };

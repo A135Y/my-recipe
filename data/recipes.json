@@ -1,185 +1,502 @@
 [
-  {
-    "title": "Chocolate Chip Cookies",
-    "description": "This recipe makes approximately 24 cookies and is perfect for anyone with a sweet tooth. The cookies are soft, chewy, and packed with chocolatey goodness.",
-    "ingredients": [
-      {
-        "name": "White sugar",
-        "amount": "340 grams"
-      },
-      {
-        "name": "Light brown sugar",
-        "amount": "255 grams"
-      },
-      {
-        "name": "Butter, melted and cooled",
-        "amount": "340 grams"
-      },
-      {
-        "name": "All-purpose flour",
-        "amount": "620 grams"
-      },
-      {
-        "name": "Salt",
-        "amount": "1.5 teaspoons"
-      },
-      {
-        "name": "Baking powder",
-        "amount": "1 teaspoon"
-      },
-      {
-        "name": "Baking soda",
-        "amount": "1 teaspoon"
-      },
-      {
-        "name": "Vanilla bean",
-        "amount": "1"
-      },
-      {
-        "name": "Eggs",
-        "amount": "2"
-      },
-      {
-        "name": "Egg yolks",
-        "amount": "2"
-      },
-      {
-        "name": "High-quality semi-sweet chocolate",
-        "amount": "454 grams"
-      },
-      {
-        "name": "Pecans, chopped",
-        "amount": "300 grams"
-      },
-      {
-        "name": "Cane sugar",
-        "amount": "150 grams"
-      },
-      {
-        "name": "Water",
-        "amount": "150 grams"
-      },
-      {
-        "name": "Maldon Sea Salt, smoked",
-        "amount": "as needed"
-      }
-    ],
-    "steps": "1. Slowly heat up the 150 grams of cane sugar and 150 grams of water for about 10 minutes until it reaches 240 degrees Celsius. Add the pecans and stir until the sugar crystallizes. Continue to stir until the sugar melts again and coats the pecans. Spread the pecans on a sheet pan and bake at 175 degrees Celsius for 10 minutes. Let cool and chop into small pieces. \n2. Melt butter and smoke it according to the description above. Make sure to cool to room temperature before mixing batter. While you’re at it, smoke the Maldon Sea Salt as well. \n3. Combine baking powder, baking soda, salt and flour in a bowl. Whisk together to evenly distribute the leavening. \n4. In the bowl of a standing mixer, combine both sugars with the cooled melted butter. Mix on low speed with the paddle attachment until fully combined. \n5. Add eggs, yolks and vanilla and mix until combined. \n6. Add the dry ingredients in two or three additions. Mix only until the dry ingredients are incorporated. Add chocolate pieces and mix just until spread throughout. \n7. Using a 3-ounce scoop, scoop the dough onto a parchment-lined cookie sheet. Chill, or even better freeze for 24 hours, on the sheet or transfer to a freezer bag for longer-term storage. \n8. To bake: Preheat oven to 150 degrees Celsius. \n9. Place frozen scooped cookies onto a parchment-lined sheet pan with at least two inches of space all around them. \n10. Top with smoked Maldon Sea Salt. \n11. Bake until golden brown, and the center of the cookie looks set and no longer wet. About 23-28 minutes for 85-gram frozen dough balls. Less baking time will be needed if baking from refrigerated, fresh or smaller-sized cookies.",
-    "image": "https://static01.nyt.com/images/2022/02/12/dining/JT-Chocolate-Chip-Cookies/JT-Chocolate-Chip-Cookies-articleLarge.jpg",
-    "cuisine": "American"
-  },
-  {
-    "title": "Apple Pie",
-    "description": "This classic apple pie recipe is the perfect dessert for any occasion. The buttery crust and sweet, spiced apple filling will leave your taste buds happy.",
-    "ingredients": [
-      {
-        "name": "All-purpose flour",
-        "amount": "313 grams"
-      },
-      {
-        "name": "Kosher salt",
-        "amount": "1 teaspoon"
-      },
-      {
-        "name": "Granulated sugar",
-        "amount": "13 grams"
-      },
-      {
-        "name": "Unsalted butter, chilled and cut into pieces",
-        "amount": "227 grams"
-      },
-      {
-        "name": "Mixed apples, peeled, cored, and cut into 1/2-inch thick slices",
-        "amount": "1134 grams"
-      },
-      {
-        "name": "Granulated sugar",
-        "amount": "50 grams"
-      },
-      {
-        "name": "Light brown sugar, packed",
-        "amount": "50 grams"
-      },
-      {
-        "name": "Fresh lemon juice",
-        "amount": "30 milliliters"
-      },
-      {
-        "name": "Kosher salt",
-        "amount": "1/4 teaspoon"
-      },
-      {
-        "name": "Ground cinnamon",
-        "amount": "1/4 teaspoon"
-      },
-      {
-        "name": "Cornstarch",
-        "amount": "22 grams"
-      },
-      {
-        "name": "Large egg, beaten",
-        "amount": "1"
-      },
-      {
-        "name": "Raw sugar",
-        "amount": "15 grams"
-      }
-    ],
-    "steps": "1. In a large bowl, whisk together the flour, salt, and sugar. Add the chilled butter and use a pastry blender or your fingers to cut the butter into the flour mixture until the mixture resembles coarse crumbs. \n2. Gradually add ice water, 1 tablespoon at a time, mixing until the dough comes together. Divide the dough in half and shape each half into a disk. Wrap in plastic wrap and refrigerate for at least 1 hour. \n3. Preheat the oven to 375°F. \n4. In a large bowl, toss the sliced apples with the granulated sugar, brown sugar, lemon juice, salt, cinnamon, and cornstarch. \n5. Roll out one disk of dough on a lightly floured surface to fit a 9-inch pie dish. Transfer the dough to the pie dish and trim the edges. \n6. Add the apple mixture to the pie dish. \n7. Roll out the second disk of dough on a lightly floured surface and cut into strips. Place the strips over the filling in a lattice pattern. \n8. Brush the beaten egg over the lattice crust and sprinkle with raw sugar. \n9. Bake for 45-50 minutes, or until the crust is golden brown and the filling is bubbly. \n10. Let cool for at least 30 minutes before serving.",
-    "image": "https://images-gmi-pmc.edge-generalmills.com/27afbc3d-a14f-4ae0-bda4-97bf0a7d12a1.jpg",
-    "cuisine": "American"
-  },
-  {
-    "title": "Blueberry Galette",
-    "description": "This rustic blueberry galette is a delicious dessert perfect for any occasion. The buttery crust and sweet blueberry filling will leave your taste buds happy.",
-    "ingredients": [
-      {
-        "name": "All-purpose flour",
-        "amount": "1 1/4 cups"
-      },
-      {
-        "name": "Granulated sugar",
-        "amount": "1 tablespoon"
-      },
-      {
-        "name": "Kosher salt",
-        "amount": "1/4 teaspoon"
-      },
-      {
-        "name": "Unsalted butter, chilled and cut into pieces",
-        "amount": "1/2 cup (1 stick)"
-      },
-      {
-        "name": "Blueberries",
-        "amount": "2 cups"
-      },
-      {
-        "name": "Granulated sugar",
-        "amount": "2 tablespoons"
-      },
-      {
-        "name": "Cornstarch",
-        "amount": "1 tablespoon"
-      },
-      {
-        "name": "Fresh lemon juice",
-        "amount": "1 tablespoon"
-      },
-      {
-        "name": "Finely grated lemon zest",
-        "amount": "1 teaspoon"
-      },
-      {
-        "name": "Large egg, beaten",
-        "amount": "1"
-      },
-      {
-        "name": "Raw sugar",
-        "amount": "1 tablespoon"
-      }
-    ],
-    "steps": "1. In a food processor, pulse the flour, sugar, and salt until combined. Add the chilled butter and pulse until the mixture resembles coarse meal with a few pea-size pieces of butter remaining. \n2. Transfer the mixture to a large bowl. Drizzle with 1/4 cup ice water and mix with a fork, adding more ice water by the tablespoonful as needed, just until a shaggy dough comes together. Lightly knead until no dry spots remain (do not overwork). \n3. Flatten the dough into a disk and wrap in plastic. Chill for at least 2 hours. \n4. Preheat the oven to 400°F and place a rack in the lower third of the oven. \n5. In a large bowl, toss the blueberries, sugar, cornstarch, lemon juice, and lemon zest. \n6. On a lightly floured surface, roll out the dough into a 12-inch circle. Transfer the dough to a parchment-lined baking sheet. \n7. Arrange the blueberry mixture in the center of the dough, leaving a 2-inch border. \n8. Fold the edges of the dough over the filling, pleating as necessary. \n9. Brush the beaten egg over the edges of the dough and sprinkle with raw sugar. \n10. Bake for 35-40 minutes, or until the crust is golden brown and the filling is bubbling. \n11. Let cool for at least 10 minutes before serving.",
-    "image": "https://preppykitchen.com/wp-content/uploads/2021/07/Blueberry-Galette-Recipe-n.jpg",
-    "cuisine": "American"
-  }
+    {
+        "title": "Chocolate Chip Cookies",
+        "description": "This recipe makes approximately 24 cookies and is perfect for anyone with a sweet tooth. The cookies are soft, chewy, and packed with chocolatey goodness.",
+        "ingredients": [
+            {
+                "name": "White sugar",
+                "amount": "340 grams"
+            },
+            {
+                "name": "Light brown sugar",
+                "amount": "255 grams"
+            },
+            {
+                "name": "Butter, melted and cooled",
+                "amount": "340 grams"
+            },
+            {
+                "name": "All-purpose flour",
+                "amount": "620 grams"
+            },
+            {
+                "name": "Salt",
+                "amount": "1.5 teaspoons"
+            },
+            {
+                "name": "Baking powder",
+                "amount": "1 teaspoon"
+            },
+            {
+                "name": "Baking soda",
+                "amount": "1 teaspoon"
+            },
+            {
+                "name": "Vanilla bean",
+                "amount": "1"
+            },
+            {
+                "name": "Eggs",
+                "amount": "2"
+            },
+            {
+                "name": "Egg yolks",
+                "amount": "2"
+            },
+            {
+                "name": "High-quality semi-sweet chocolate",
+                "amount": "454 grams"
+            },
+            {
+                "name": "Pecans, chopped",
+                "amount": "300 grams"
+            },
+            {
+                "name": "Cane sugar",
+                "amount": "150 grams"
+            },
+            {
+                "name": "Water",
+                "amount": "150 grams"
+            },
+            {
+                "name": "Maldon Sea Salt, smoked",
+                "amount": "as needed"
+            }
+        ],
+        "steps": "1. Slowly heat up the 150 grams of cane sugar and 150 grams of water for about 10 minutes until it reaches 240 degrees Celsius. Add the pecans and stir until the sugar crystallizes. Continue to stir until the sugar melts again and coats the pecans. Spread the pecans on a sheet pan and bake at 175 degrees Celsius for 10 minutes. Let cool and chop into small pieces. \n2. Melt butter and smoke it according to the description above. Make sure to cool to room temperature before mixing batter. While you’re at it, smoke the Maldon Sea Salt as well. \n3. Combine baking powder, baking soda, salt and flour in a bowl. Whisk together to evenly distribute the leavening. \n4. In the bowl of a standing mixer, combine both sugars with the cooled melted butter. Mix on low speed with the paddle attachment until fully combined. \n5. Add eggs, yolks and vanilla and mix until combined. \n6. Add the dry ingredients in two or three additions. Mix only until the dry ingredients are incorporated. Add chocolate pieces and mix just until spread throughout. \n7. Using a 3-ounce scoop, scoop the dough onto a parchment-lined cookie sheet. Chill, or even better freeze for 24 hours, on the sheet or transfer to a freezer bag for longer-term storage. \n8. To bake: Preheat oven to 150 degrees Celsius. \n9. Place frozen scooped cookies onto a parchment-lined sheet pan with at least two inches of space all around them. \n10. Top with smoked Maldon Sea Salt. \n11. Bake until golden brown, and the center of the cookie looks set and no longer wet. About 23-28 minutes for 85-gram frozen dough balls. Less baking time will be needed if baking from refrigerated, fresh or smaller-sized cookies.",
+        "image": "https://static01.nyt.com/images/2022/02/12/dining/JT-Chocolate-Chip-Cookies/JT-Chocolate-Chip-Cookies-articleLarge.jpg",
+        "cuisine": "American"
+    },
+    {
+        "title": "Apple Pie",
+        "description": "This classic apple pie recipe is the perfect dessert for any occasion. The buttery crust and sweet, spiced apple filling will leave your taste buds happy.",
+        "ingredients": [
+            {
+                "name": "All-purpose flour",
+                "amount": "313 grams"
+            },
+            {
+                "name": "Kosher salt",
+                "amount": "1 teaspoon"
+            },
+            {
+                "name": "Granulated sugar",
+                "amount": "13 grams"
+            },
+            {
+                "name": "Unsalted butter, chilled and cut into pieces",
+                "amount": "227 grams"
+            },
+            {
+                "name": "Mixed apples, peeled, cored, and cut into 1/2-inch thick slices",
+                "amount": "1134 grams"
+            },
+            {
+                "name": "Granulated sugar",
+                "amount": "50 grams"
+            },
+            {
+                "name": "Light brown sugar, packed",
+                "amount": "50 grams"
+            },
+            {
+                "name": "Fresh lemon juice",
+                "amount": "30 milliliters"
+            },
+            {
+                "name": "Kosher salt",
+                "amount": "1/4 teaspoon"
+            },
+            {
+                "name": "Ground cinnamon",
+                "amount": "1/4 teaspoon"
+            },
+            {
+                "name": "Cornstarch",
+                "amount": "22 grams"
+            },
+            {
+                "name": "Large egg, beaten",
+                "amount": "1"
+            },
+            {
+                "name": "Raw sugar",
+                "amount": "15 grams"
+            }
+        ],
+        "steps": "1. In a large bowl, whisk together the flour, salt, and sugar. Add the chilled butter and use a pastry blender or your fingers to cut the butter into the flour mixture until the mixture resembles coarse crumbs. \n2. Gradually add ice water, 1 tablespoon at a time, mixing until the dough comes together. Divide the dough in half and shape each half into a disk. Wrap in plastic wrap and refrigerate for at least 1 hour. \n3. Preheat the oven to 375°F. \n4. In a large bowl, toss the sliced apples with the granulated sugar, brown sugar, lemon juice, salt, cinnamon, and cornstarch. \n5. Roll out one disk of dough on a lightly floured surface to fit a 9-inch pie dish. Transfer the dough to the pie dish and trim the edges. \n6. Add the apple mixture to the pie dish. \n7. Roll out the second disk of dough on a lightly floured surface and cut into strips. Place the strips over the filling in a lattice pattern. \n8. Brush the beaten egg over the lattice crust and sprinkle with raw sugar. \n9. Bake for 45-50 minutes, or until the crust is golden brown and the filling is bubbly. \n10. Let cool for at least 30 minutes before serving.",
+        "image": "https://images-gmi-pmc.edge-generalmills.com/27afbc3d-a14f-4ae0-bda4-97bf0a7d12a1.jpg",
+        "cuisine": "American"
+    },
+    {
+        "title": "Blueberry Galette",
+        "description": "This rustic blueberry galette is a delicious dessert perfect for any occasion. The buttery crust and sweet blueberry filling will leave your taste buds happy.",
+        "ingredients": [
+            {
+                "name": "All-purpose flour",
+                "amount": "1 1/4 cups"
+            },
+            {
+                "name": "Granulated sugar",
+                "amount": "1 tablespoon"
+            },
+            {
+                "name": "Kosher salt",
+                "amount": "1/4 teaspoon"
+            },
+            {
+                "name": "Unsalted butter, chilled and cut into pieces",
+                "amount": "1/2 cup (1 stick)"
+            },
+            {
+                "name": "Blueberries",
+                "amount": "2 cups"
+            },
+            {
+                "name": "Granulated sugar",
+                "amount": "2 tablespoons"
+            },
+            {
+                "name": "Cornstarch",
+                "amount": "1 tablespoon"
+            },
+            {
+                "name": "Fresh lemon juice",
+                "amount": "1 tablespoon"
+            },
+            {
+                "name": "Finely grated lemon zest",
+                "amount": "1 teaspoon"
+            },
+            {
+                "name": "Large egg, beaten",
+                "amount": "1"
+            },
+            {
+                "name": "Raw sugar",
+                "amount": "1 tablespoon"
+            }
+        ],
+        "steps": "1. In a food processor, pulse the flour, sugar, and salt until combined. Add the chilled butter and pulse until the mixture resembles coarse meal with a few pea-size pieces of butter remaining. \n2. Transfer the mixture to a large bowl. Drizzle with 1/4 cup ice water and mix with a fork, adding more ice water by the tablespoonful as needed, just until a shaggy dough comes together. Lightly knead until no dry spots remain (do not overwork). \n3. Flatten the dough into a disk and wrap in plastic. Chill for at least 2 hours. \n4. Preheat the oven to 400°F and place a rack in the lower third of the oven. \n5. In a large bowl, toss the blueberries, sugar, cornstarch, lemon juice, and lemon zest. \n6. On a lightly floured surface, roll out the dough into a 12-inch circle. Transfer the dough to a parchment-lined baking sheet. \n7. Arrange the blueberry mixture in the center of the dough, leaving a 2-inch border. \n8. Fold the edges of the dough over the filling, pleating as necessary. \n9. Brush the beaten egg over the edges of the dough and sprinkle with raw sugar. \n10. Bake for 35-40 minutes, or until the crust is golden brown and the filling is bubbling. \n11. Let cool for at least 10 minutes before serving.",
+        "image": "https://preppykitchen.com/wp-content/uploads/2021/07/Blueberry-Galette-Recipe-n.jpg",
+        "cuisine": "American"
+    },
+    {
+        "title": "Peach Cobbler",
+        "description": "This rustic peach cobbler is a delicious dessert perfect for any occasion. The buttery crust and sweet peach filling will leave your taste buds happy.",
+        "ingredients": [
+            {
+                "name": "Peaches, halved, pitted, and cut into 1cm wedges",
+                "amount": "1.13 kg"
+            },
+            {
+                "name": "Granulated sugar",
+                "amount": "67 g"
+            },
+            {
+                "name": "Light brown sugar",
+                "amount": "53 g"
+            },
+            {
+                "name": "Cornstarch",
+                "amount": "16 g"
+            },
+            {
+                "name": "Fresh lemon juice",
+                "amount": "15 ml"
+            },
+            {
+                "name": "Finely grated lemon zest",
+                "amount": "1 tsp"
+            },
+            {
+                "name": "Ground cinnamon",
+                "amount": "1/4 tsp"
+            },
+            {
+                "name": "Ground cardamom",
+                "amount": "1/4 tsp"
+            },
+            {
+                "name": "Kosher salt",
+                "amount": "1/4 tsp"
+            },
+            {
+                "name": "All-purpose flour",
+                "amount": "125 g"
+            },
+            {
+                "name": "Granulated sugar",
+                "amount": "53 g"
+            },
+            {
+                "name": "Baking powder",
+                "amount": "5 g"
+            },
+            {
+                "name": "Kosher salt",
+                "amount": "1/2 tsp"
+            },
+            {
+                "name": "Ground cinnamon",
+                "amount": "1/4 tsp"
+            },
+            {
+                "name": "Ground cardamom",
+                "amount": "1/4 tsp"
+            },
+            {
+                "name": "Unsalted butter, chilled and cut into pieces",
+                "amount": "85 g"
+            },
+            {
+                "name": "Heavy cream",
+                "amount": "120 ml"
+            },
+            {
+                "name": "Large egg, beaten",
+                "amount": "1"
+            },
+            {
+                "name": "Raw sugar",
+                "amount": "13 g"
+            }
+        ],
+        "steps": [
+            "1. Preheat oven to 190°C and place a rack in the lower third of the oven. \n2. Toss peaches, granulated sugar, brown sugar, cornstarch, lemon juice, lemon zest, cinnamon, cardamom, and salt in a large bowl to combine. Transfer to a 2-qt. baking dish.\n3. Whisk flour, granulated sugar, baking powder, salt, cinnamon, and cardamom in a medium bowl. Add butter and toss to coat. Using your fingers or a pastry blender, work butter into flour until only pea-size pieces remain. Add cream and gently mix until a shaggy dough forms.\n4. On a lightly floured surface, roll out the dough into a 12-inch circle. Transfer the dough to the top of the peach filling, tucking in the edges around the filling.\n5. Brush the beaten egg over the edges of the dough and sprinkle with raw sugar.\n6. Bake for 45-50 minutes, or until the crust is golden brown and the filling is bubbling./n7. Let cool for at least 10 minutes before serving."
+        ],
+        "image": "https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Peach-Cobbler-for-Two_EXPS_CF219_10849_B12_13_14b.jpg",
+        "cuisine": "American"
+    },
+    {
+        "title": "Blueberry Muffins",
+        "description": "These blueberry muffins are soft, fluffy, and full of juicy blueberry goodness. They're finished with a sweet crunchy cinnamon streusel on a super high muffin top.",
+        "ingredients": [
+            {
+                "name": "All-purpose flour",
+                "amount": "125 g"
+            },
+            {
+                "name": "Light brown sugar",
+                "amount": "200 g"
+            },
+            {
+                "name": "Kosher salt",
+                "amount": "3 g"
+            },
+            {
+                "name": "Unsalted butter, chilled and cut into pieces",
+                "amount": "113 g"
+            },
+            {
+                "name": "Baking powder",
+                "amount": "5 g"
+            },
+            {
+                "name": "Baking soda",
+                "amount": "2.5 g"
+            },
+            {
+                "name": "Egg",
+                "amount": "1"
+            },
+            {
+                "name": "Buttermilk",
+                "amount": "177 ml"
+            },
+            {
+                "name": "Vanilla extract",
+                "amount": "5 ml"
+            },
+            {
+                "name": "Fresh blueberries",
+                "amount": "140 g"
+            }
+        ],
+        "steps": [
+            "1. Preheat oven to 375°. Line a standard 12-cup muffin pan with paper liners. Make the streusel: Whisk flour, brown sugar, and salt in a medium bowl. Add butter and rub in with your fingers until mixture is crumbly. Set streusel aside.\n2. Make the muffins: Whisk flour, baking powder, salt, and baking soda in a medium bowl. Whisk brown sugar, butter, egg, buttermilk, and vanilla in a large bowl. Whisk in dry ingredients, then fold in blueberries.\n3. Divide batter among muffin cups and sprinkle streusel on top. Bake muffins until a tester inserted into the center comes out clean, 25–30 minutes. Transfer pan to a wire rack and let muffins cool in pan 5 minutes. Transfer muffins to rack and let cool completely."
+        ],
+        "image": "https://bromabakery.com/wp-content/uploads/2022/05/Blueberry-Streusel-Muffins-3.jpg",
+        "cuisine": "American"
+    },
+    {
+        "title": "Victoria Sponge Cake with Chiffon Sponge",
+        "description": "This Victoria Sponge Cake with Chiffon Sponge is a light and fluffy cake that's perfect for any occasion. The chiffon sponge adds a delicate texture to the classic Victoria sponge recipe. Sandwiched together with fresh cream and strawberry jam, this cake is a British classic.",
+        "ingredients": [
+            {
+                "name": "Cake flour",
+                "amount": "180 g"
+            },
+            {
+                "name": "Baking powder",
+                "amount": "1 tsp"
+            },
+            {
+                "name": "Salt",
+                "amount": "1/2 tsp"
+            },
+            {
+                "name": "Granulated sugar",
+                "amount": "200 g"
+            },
+            {
+                "name": "Vegetable oil",
+                "amount": "80 ml"
+            },
+            {
+                "name": "Egg yolks",
+                "amount": "6"
+            },
+            {
+                "name": "Water",
+                "amount": "80 ml"
+            },
+            {
+                "name": "Egg whites",
+                "amount": "6"
+            },
+            {
+                "name": "Cream of tartar",
+                "amount": "1/2 tsp"
+            },
+            {
+                "name": "Granulated sugar",
+                "amount": "50 g"
+            },
+            {
+                "name": "Whipped cream",
+                "amount": "300 ml"
+            },
+            {
+                "name": "Strawberry jam",
+                "amount": "200 g"
+            },
+            {
+                "name": "Fresh strawberries, sliced",
+                "amount": "150 g"
+            }
+        ],
+        "steps": [
+            "1. Preheat the oven to 170°C (325°F). Grease and flour two 8-inch cake pans.\n2. In a large mixing bowl, sift together the cake flour, baking powder, salt, and 200 g granulated sugar.\n3. In a separate bowl, whisk together the vegetable oil, egg yolks, and water. Add the wet ingredients to the dry ingredients and mix until smooth.\n4. In a separate bowl, beat the egg whites until frothy. Add the cream of tartar and continue to beat until soft peaks form. Gradually add 50 g granulated sugar and beat until stiff peaks form.\n5. Fold the beaten egg whites into the cake batter until no white streaks remain.\n6. Divide the batter evenly between the two prepared cake pans and smooth the tops with a spatula.\n7. Bake the cakes for 25-30 minutes or until a toothpick inserted in the center of each cake comes out clean.\n8. Allow the cakes to cool completely in the pans before removing them.\n9. Spread the strawberry jam over the top of one cake layer and then top with sliced strawberries. Spread the whipped cream over the strawberries.\n10. Place the second cake layer on top of the whipped cream and gently press down.\n11. Dust the top of the cake with powdered sugar, if desired, and serve."
+        ],
+        "image": "https://thehappyfoodie.co.uk/wp-content/uploads/2022/02/LVB_020_Victoria-Sponge-cake2-scaled.jpg",
+        "cuisine": "British"
+    },
+    {
+        "title": "Carrot Cake Cupcakes",
+        "description": "These Carrot Cake Cupcakes are a delicious twist on the classic carrot cake. With a moist and tender crumb, these cupcakes are loaded with freshly grated carrots, warm spices, and chopped pecans, and topped with a rich and creamy cream cheese frosting.",
+        "ingredients": [
+            {
+                "name": "All-purpose flour",
+                "amount": "150 g"
+            },
+            {
+                "name": "Baking powder",
+                "amount": "1 tsp"
+            },
+            {
+                "name": "Baking soda",
+                "amount": "1/2 tsp"
+            },
+            {
+                "name": "Salt",
+                "amount": "1/4 tsp"
+            },
+            {
+                "name": "Ground cinnamon",
+                "amount": "1 tsp"
+            },
+            {
+                "name": "Ground ginger",
+                "amount": "1/2 tsp"
+            },
+            {
+                "name": "Ground nutmeg",
+                "amount": "1/4 tsp"
+            },
+            {
+                "name": "Unsalted butter, room temperature",
+                "amount": "115 g"
+            },
+            {
+                "name": "Granulated sugar",
+                "amount": "150 g"
+            },
+            {
+                "name": "Eggs",
+                "amount": "2"
+            },
+            {
+                "name": "Vanilla extract",
+                "amount": "1 tsp"
+            },
+            {
+                "name": "Grated carrots",
+                "amount": "150 g"
+            },
+            {
+                "name": "Chopped pecans",
+                "amount": "75 g"
+            },
+            {
+                "name": "Cream cheese, room temperature",
+                "amount": "115 g"
+            },
+            {
+                "name": "Confectioners' sugar",
+                "amount": "120 g"
+            },
+            {
+                "name": "Vanilla extract",
+                "amount": "1/2 tsp"
+            },
+            {
+                "name": "Heavy cream",
+                "amount": "2 tbsp"
+            }
+        ],
+        "steps": [
+            "1. Preheat the oven to 350°F (180°C). Line a 12-cup muffin tin with paper liners.\n2. In a medium bowl, whisk together the flour, baking powder, baking soda, salt, cinnamon, ginger, and nutmeg.\n3. In a large bowl, cream the butter and sugar together until light and fluffy. Add the eggs, one at a time, beating well after each addition. Stir in the vanilla extract.\n4. Add the dry ingredients to the wet ingredients and mix until just combined.\n5. Fold in the grated carrots and chopped pecans.\n6. Divide the batter evenly among the prepared muffin cups, filling each about 2/3 full.\n7. Bake for 18-20 minutes, or until a toothpick inserted in the center of a cupcake comes out clean.\n8. Allow the cupcakes to cool completely before frosting.\n9. To make the cream cheese frosting, beat the cream cheese, confectioners' sugar, vanilla extract, and heavy cream together until smooth and creamy.\n10. Frost the cooled cupcakes with the cream cheese frosting. Serve and enjoy!"
+        ],
+        "image": "https://www.ifyougiveablondeakitchen.com/wp-content/uploads/2021/04/carrot-cake-cupcakes-recipe.jpg",
+        "cuisine": "American"
+    },
+    {
+        "title": "Tiramisu",
+        "description": "This version of the classic Italian dessert is made with mascarpone cheese, ladyfingers, and no alcohol. It's a delicious and creamy dessert that's perfect for any occasion.",
+        "ingredients": [
+            {
+                "name": "mascarpone cheese",
+                "amount": "500 g"
+            },
+            {
+                "name": "heavy cream",
+                "amount": "500 ml"
+            },
+            {
+                "name": "ladyfingers",
+                "amount": "24"
+            },
+            {
+                "name": "Instant coffee",
+                "amount": "2 tbsp"
+            },
+            {
+                "name": "Hot water",
+                "amount": "1 cup"
+            },
+            {
+                "name": "Sugar",
+                "amount": "1/2 cup"
+            },
+            {
+                "name": "Cocoa powder",
+                "amount": "2 tbsp"
+            }
+        ],
+        "steps": "1. In a large mixing bowl, beat the mascarpone cheese until smooth.\n2. In a separate bowl, beat the halal heavy cream until stiff peaks form.\n3. Fold the whipped cream into the mascarpone cheese until well combined.\n4. In a shallow dish, mix the instant coffee with hot water and sugar until dissolved.\n5. Quickly dip the halal ladyfingers in the coffee mixture, being careful not to soak them for too long.\n6. Layer the ladyfingers in the bottom of a 9x13 inch dish.\n7. Spread half of the mascarpone mixture over the ladyfingers.\n8. Repeat with another layer of dipped ladyfingers and remaining mascarpone mixture.\n9. Sift cocoa powder over the top of the tiramisu.\n10. Cover and refrigerate for at least 4 hours or overnight.\n11. Serve chilled.",
+        "image": "https://static01.nyt.com/images/2017/04/05/dining/05COOKING-TIRAMISU1/05COOKING-TIRAMISU1-master768.jpg",
+        "cuisine": "Italian"
+    }
 ]

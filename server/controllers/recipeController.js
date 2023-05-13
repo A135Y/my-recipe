@@ -3,11 +3,13 @@ const router = express.Router();
 const { Recipe } = require("../models/recipe");
 const jsonfile = require("jsonfile");
 const { sequelize } = require("../database/db");
+require("dotenv").config();
+const RECIPES_JSON_FILE = process.env.RECIPES_JSON_FILE;
 
 async function importRecipesFromJson() {
   try {
     // Read data from the JSON file
-    const data = await jsonfile.readFile("./data/recipes.json");
+    const data = await jsonfile.readFile(RECIPES_JSON_FILE);
     // Insert the data into the database using Sequelize
     await Recipe.bulkCreate(data);
     console.log("Recipes imported successfully");
