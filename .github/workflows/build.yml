@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '16.x'
       - run: npm ci
-      - run: npm test
+      - run: npm test -- --detectOpenHandles
 
   build-and-deploy:
     name: Build and Deploy
