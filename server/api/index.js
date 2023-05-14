@@ -24,4 +24,4 @@ sequelize.sync().then(() => {
   });
 });
 
-module.exports = { port: port }
+module.exports = { port: port, app }

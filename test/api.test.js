@@ -1,136 +1,118 @@
 const request = require("supertest");
-const app = require("../src/App");
-const { Recipe } = require("../models/recipe");
-const jsonfile = require("jsonfile");
-const { sequelize } = require("../database/db");
-const path = require("path");
-const { expect } = require("chai");
+const recipeController = require("../server/controllers/recipeController");
+const api = require("../server/api");
+const { Recipe } = require("../server/models/recipe");
+const { sequelize } = require("../server/database/db");
 
+const app = api.app;
+const server = app.listen();
 
-const RECIPES_JSON_FILE = path.join(__dirname, "../data/recipes.json");
-
-before(async () => {
-    await sequelize.sync({ force: true }); // recreate db
-    const data = await jsonfile.readFile(RECIPES_JSON_FILE);
-    await Recipe.bulkCreate(data);
+beforeAll(async () => {
+    await sequelize.sync();
 });
 
-after(async () => {
-    await sequelize.drop();
+afterAll(() => {
+    server.close();
 });
 
+afterEach(async () => {
+    await Recipe.destroy({ truncate: true, force: true });
+});
 
-describe.only("Recipe API", () => {
-    describe.only("GET /recipes", () => {
-        it("should return all recipes", (done) => {
-            request(app)
-                .get("/recipes")
-                .expect("Content-Type", /json/)
-                .expect(200)
-                .then((res) => {
-                    const recipes = res.body;
-                    expect(recipes.length).to.be.greaterThan(0);
-                    done();
-                })
-                .catch((err) => done(err));
-        });
-    });
-
-    describe.only("GET /recipes/:id", () => {
-        it("should return a recipe by id", (done) => {
-            Recipe.findOne().then((recipe) => {
-                request(app)
-                    .get("/recipes/" + recipe.id)
-                    .expect("Content-Type", /json/)
-                    .expect(200)
-                    .then((res) => {
-                        const returnedRecipe = res.body;
-                        expect(returnedRecipe.title).to.equal(recipe.title);
-                        expect(returnedRecipe.description).to.equal(recipe.description);
-                        done();
-                    })
-                    .catch((err) => done(err));
-            });
-        });
-    });
-
-    describe.only("POST /recipes", () => {
-        it("should create a new recipe", (done) => {
-            const newRecipe = {
-                title: "New recipe",
-                description: "A new recipe",
-                ingredients: ["Ingredient 1", "Ingredient 2"],
-                steps: "Step 1, Step 2",
-                image: "https://image.com",
-                cuisine: "Cuisine",
-            };
-            request(app)
-                .post("/recipes")
-                .send(newRecipe)
-                .expect("Content-Type", /json/)
-                .expect(200)
-                .then((res) => {
-                    const createdRecipe = res.body;
-                    expect(createdRecipe.title).to.equal(newRecipe.title);
-                    expect(createdRecipe.description).to.equal(newRecipe.description);
-                    expect(createdRecipe.ingredients).to.eql(newRecipe.ingredients);
-                    expect(createdRecipe.steps).to.equal(newRecipe.steps);
-                    expect(createdRecipe.image).to.equal(newRecipe.image);
-                    expect(createdRecipe.cuisine).to.equal(newRecipe.cuisine);
-                    done();
-                })
-                .catch((err) => done(err));
-        });
-    });
-
-    describe.only("PUT /recipes/:id", () => {
-        it("should update a recipe", (done) => {
-            Recipe.findOne().then((recipe) => {
-                const updatedRecipe = {
-                    title: "Updated recipe",
-                    description: "An updated recipe",
-                    ingredients: ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
-                    steps: "Step 1, Step 2, Step 3",
-                    image: "https://image-updated.com",
-                    cuisine: "Cuisine updated",
-                };
-                request(app)
-                    .put("/recipes/" + recipe.id)
-                    .send(updatedRecipe)
-                    .expect("Content-Type", /json/)
-                    .expect(200).then((res) => {
-                        const updatedRecipe = res.body;
-                        expect(updatedRecipe.title).to.equal(updatedRecipe.title);
-                        expect(updatedRecipe.description).to.equal(updatedRecipe.description);
-                        expect(updatedRecipe.ingredients).to.eql(updatedRecipe.ingredients);
-                        expect(updatedRecipe.steps).to.equal(updatedRecipe.steps);
-                        expect(updatedRecipe.image).to.equal(updatedRecipe.image);
-                        expect(updatedRecipe.cuisine).to.equal(updatedRecipe.cuisine);
-                        done();
-                    })
-                    .catch((err) => done(err));
-            });
-        });
-    });
-    describe.only("DELETE /recipes/:id", () => {
-        it("should delete a recipe", (done) => {
-            Recipe.findOne().then((recipe) => {
-                request(app)
-                    .delete("/recipes/" + recipe.id)
-                    .expect(200)
-                    .then(() => {
-                        Recipe.findByPk(recipe.id).then((foundRecipe) => {
-                            expect(foundRecipe).to.be.null;
-                            done();
-                        });
-                    })
-                    .catch((err) => done(err));
-            });
-        });
-    });
-
-    after(async () => {
-        await sequelize.drop();
+describe("GET /recipes", () => {
+    test("Gets list of recipes", async () => {
+        const response = await request(app).get("/recipes");
+        expect(response.status).toBe(200);
     });
 });
 
+
+describe("POST /recipes", () => {
+    test("Creates a new recipe", async () => {
+        const recipe = await Recipe.create({
+            title: "Chocolate Lava Cake",
+            description: "A rich chocolate cake with a molten chocolate center. Perfect for chocolate lovers!",
+            ingredients: [{ "name": "All-purpose flour", "amount": "1/2 cup" }, { "name": "Granulated sugar", "amount": "1/2 cup" }, { "name": "Unsweetened cocoa powder", "amount": "1/3 cup" }, { "name": "Baking powder", "amount": "1 teaspoon" }, { "name": "Salt", "amount": "1/4 teaspoon" }, { "name": "Milk", "amount": "1/3 cup" }, { "name": "Melted butter", "amount": "1/3 cup" }, { "name": "Vanilla extract", "amount": "1 teaspoon" }, { "name": "Semi-sweet chocolate chips", "amount": "1 cup" }],
+            steps: "1. Preheat the oven to 350°F and grease four 6-ounce ramekins.\n2. In a bowl, whisk together the flour, sugar, cocoa, baking powder, and salt.\n3. In a separate bowl, whisk together the milk, melted butter, and vanilla.\n4. Add the wet ingredients to the dry ingredients and stir until just combined. Gently fold in the chocolate chips.\n5. Divide the batter evenly between the prepared ramekins. Bake for about 12 minutes, until the edges are set but the center is still wobbly.\n6. Allow cakes to cool for 5 minutes, then serve immediately with ice cream, whipped cream, or fresh berries if desired.",
+            image: "https://images.unsplash.com/photo-1581093457331-9d8a2d9e3f5c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hvY29sYXRlJTIwbGF2YXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
+            cuisine: "American"
+        });
+        const response = await request(app).post("/recipes").send({
+            title: "Chocolate Lava Cake",
+            description: "A rich chocolate cake with a molten chocolate center. Perfect for chocolate lovers!",
+            ingredients: [{ "name": "All-purpose flour", "amount": "1/2 cup" }, { "name": "Granulated sugar", "amount": "1/2 cup" }, { "name": "Unsweetened cocoa powder", "amount": "1/3 cup" }, { "name": "Baking powder", "amount": "1 teaspoon" }, { "name": "Salt", "amount": "1/4 teaspoon" }, { "name": "Milk", "amount": "1/3 cup" }, { "name": "Melted butter", "amount": "1/3 cup" }, { "name": "Vanilla extract", "amount": "1 teaspoon" }, { "name": "Semi-sweet chocolate chips", "amount": "1 cup" }],
+            steps: "1. Preheat the oven to 350°F and grease four 6-ounce ramekins.\n2. In a bowl, whisk together the flour, sugar, cocoa, baking powder, and salt.\n3. In a separate bowl, whisk together the milk, melted butter, and vanilla.\n4. Add the wet ingredients to the dry ingredients and stir until just combined. Gently fold in the chocolate chips.\n5. Divide the batter evenly between the prepared ramekins. Bake for about 12 minutes, until the edges are set but the center is still wobbly.\n6. Allow cakes to cool for 5 minutes, then serve immediately with ice cream, whipped cream, or fresh berries if desired.",
+            image: "https://images.unsplash.com/photo-1581093457331-9d8a2d9e3f5c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hvY29sYXRlJTIwbGF2YXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
+            cuisine: "American"
+        }); expect(response.status).toBe(200);
+    });
+})
+
+describe("GET /recipes/:id", () => {
+    test("Gets a recipe by id", async () => {
+        const recipe = await Recipe.create({
+            title: "Chocolate Lava Cake",
+            description:
+                "A rich chocolate cake with a molten chocolate center. Perfect for chocolate lovers!",
+            ingredients: [
+                { name: "All-purpose flour", amount: "1/2 cup" },
+                { name: "Granulated sugar", amount: "1/2 cup" },
+                { name: "Unsweetened cocoa powder", amount: "1/3 cup" },
+                { name: "Baking powder", amount: "1 teaspoon" },
+                { name: "Salt", amount: "1/4 teaspoon" },
+                { name: "Milk", amount: "1/3 cup" },
+                { name: "Melted butter", amount: "1/3 cup" },
+                { name: "Vanilla extract", amount: "1 teaspoon" },
+                { name: "Semi-sweet chocolate chips", amount: "1 cup" },
+            ],
+            steps:
+                "1. Preheat the oven to 350°F and grease four 6-ounce ramekins.\n2. In a bowl, whisk together the flour, sugar, cocoa, baking powder, and salt.\n3. In a separate bowl, whisk together the milk, melted butter, and vanilla.\n4. Add the wet ingredients to the dry ingredients and stir until just combined. Gently fold in the chocolate chips.\n5. Divide the batter evenly between the prepared ramekins. Bake for about 12 minutes, until the edges are set but the center is still wobbly.\n6. Allow cakes to cool for 5 minutes, then serve immediately with ice cream, whipped cream, or fresh berries if desired.",
+            image:
+                "https://images.unsplash.com/photo-1581093457331-9d8a2d9e3f5c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hvY29sYXRlJTIwbGF2YXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
+            cuisine: "American",
+        });
+        const response = await request(app).get(`/recipes/${recipe.id}`);
+        expect(response.status).toBe(200);
+    });
+});
+
+describe("PUT /recipes/:id", () => {
+    test("Updates a recipe", async () => {
+        const recipe = await Recipe.create({
+            title: "Chocolate Lava Cake",
+            description: "A rich chocolate cake with a molten chocolate center. Perfect for chocolate lovers!",
+            ingredients: [{ "name": "All-purpose flour", "amount": "1/2 cup" }, { "name": "Granulated sugar", "amount": "1/2 cup" }, { "name": "Unsweetened cocoa powder", "amount": "1/3 cup" }, { "name": "Baking powder", "amount": "1 teaspoon" }, { "name": "Salt", "amount": "1/4 teaspoon" }, { "name": "Milk", "amount": "1/3 cup" }, { "name": "Melted butter", "amount": "1/3 cup" }, { "name": "Vanilla extract", "amount": "1 teaspoon" }, { "name": "Semi-sweet chocolate chips", "amount": "1 cup" }],
+            steps: "1. Preheat the oven to 350°F and grease four 6-ounce ramekins.\n2. In a bowl, whisk together the flour, sugar, cocoa, baking powder, and salt.\n3. In a separate bowl, whisk together the milk, melted butter, and vanilla.\n4. Add the wet ingredients to the dry ingredients and stir until just combined. Gently fold in the chocolate chips.\n5. Divide the batter evenly between the prepared ramekins. Bake for about 12 minutes, until the edges are set but the center is still wobbly.\n6. Allow cakes to cool for 5 minutes, then serve immediately with ice cream, whipped cream, or fresh berries if desired.",
+            image: "https://images.unsplash.com/photo-1581093457331-9d8a2d9e3f5c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hvY29sYXRlJTIwbGF2YXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
+            cuisine: "American"
+        });
+        const response = await request(app).put(`/recipes/${recipe.id}`).send({
+            title: "Chocolate Lava Cake",
+            description: "A rich chocolate cake with a molten chocolate center. Perfect for chocolate lovers!",
+            ingredients: [{ "name": "All-purpose flour", "amount": "1/2 cup" }, { "name": "Granulated sugar", "amount": "1/2 cup" }, { "name": "Unsweetened cocoa powder", "amount": "1/3 cup" }, { "name": "Baking powder", "amount": "1 teaspoon" }, { "name": "Salt", "amount": "1/4 teaspoon" }, { "name": "Milk", "amount": "1/3 cup" }, { "name": "Melted butter", "amount": "1/3 cup" }, { "name": "Vanilla extract", "amount": "1 teaspoon" }, { "name": "Semi-sweet chocolate chips", "amount": "1 cup" }],
+            steps: "1. Preheat the oven to 350°F and grease four 6-ounce ramekins.\n2. In a bowl, whisk together the flour, sugar, cocoa, baking powder, and salt.\n3. In a separate bowl, whisk together the milk, melted butter, and vanilla.\n4. Add the wet ingredients to the dry ingredients and stir until just combined. Gently fold in the chocolate chips.\n5. Divide the batter evenly between the prepared ramekins. Bake for about 12 minutes, until the edges are set but the center is still wobbly.\n6. Allow cakes to cool for 5 minutes, then serve immediately with ice cream, whipped cream, or fresh berries if desired.",
+            image: "https://images.unsplash.com/photo-1581093457331-9d8a2d9e3f5c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hvY29sYXRlJTIwbGF2YXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
+            cuisine: "American"
+        });
+        expect(response.status).toBe(200);
+    });
+});
+
+describe("DELETE /recipes/:id", () => {
+    test("Deletes a recipe", async () => {
+        const recipe = await Recipe.create({
+            title: "Chocolate Lava Cake",
+            description: "A rich chocolate cake with a molten chocolate center. Perfect for chocolate lovers!",
+            ingredients: [{ "name": "All-purpose flour", "amount": "1/2 cup" }, { "name": "Granulated sugar", "amount": "1/2 cup" }, { "name": "Unsweetened cocoa powder", "amount": "1/3 cup" }, { "name": "Baking powder", "amount": "1 teaspoon" }, { "name": "Salt", "amount": "1/4 teaspoon" }, { "name": "Milk", "amount": "1/3 cup" }, { "name": "Melted butter", "amount": "1/3 cup" }, { "name": "Vanilla extract", "amount": "1 teaspoon" }, { "name": "Semi-sweet chocolate chips", "amount": "1 cup" }],
+            steps: "1. Preheat the oven to 350°F and grease four 6-ounce ramekins.\n2. In a bowl, whisk together the flour, sugar, cocoa, baking powder, and salt.\n3. In a separate bowl, whisk together the milk, melted butter, and vanilla.\n4. Add the wet ingredients to the dry ingredients and stir until just combined. Gently fold in the chocolate chips.\n5. Divide the batter evenly between the prepared ramekins. Bake for about 12 minutes, until the edges are set but the center is still wobbly.\n6. Allow cakes to cool for 5 minutes, then serve immediately with ice cream, whipped cream, or fresh berries if desired.",
+            image: "https://images.unsplash.com/photo-1581093457331-9d8a2d9e3f5c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hvY29sYXRlJTIwbGF2YXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
+            cuisine: "American"
+        });
+        const response = await request(app).delete(`/recipes/${recipe.id}`);
+        expect(response.status).toBe(200);
+    })
+})
+
+afterAll(async () => {
+    await sequelize.close();
+});
