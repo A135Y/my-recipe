@@ -26,7 +26,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "seed": "node server/api/index.js",
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
