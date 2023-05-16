@@ -762,5 +762,107 @@
     ],
     "image": "https://cookingwithkarli.com/wp-content/uploads/2021/10/churro-cookie-6.jpg",
     "cuisine": "Mexican"
+  },
+  {
+    "title": "Boston Cream Brioche Doughnuts",
+    "description": "These doughnuts are soft and fluffy with a creamy vanilla custard filling. They're topped with a rich chocolate glaze that's perfect for any occasion.",
+    "ingredients": [
+      {
+        "name": "Whole milk",
+        "amount": "1 cup"
+      },
+      {
+        "name": "Granulated sugar",
+        "amount": "1/2 cup"
+      },
+      {
+        "name": "Active dry yeast",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "All-purpose flour",
+        "amount": "4 cups"
+      },
+      {
+        "name": "Salt",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "Eggs",
+        "amount": "4"
+      },
+      {
+        "name": "Unsalted butter, softened",
+        "amount": "1/2 cup"
+      },
+      {
+        "name": "Vanilla extract",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "Whole milk",
+        "amount": "1 cup"
+      },
+      {
+        "name": "Granulated sugar",
+        "amount": "1/2 cup"
+      },
+      {
+        "name": "Cornstarch",
+        "amount": "1/4 cup"
+      },
+      {
+        "name": "Egg yolks",
+        "amount": "4"
+      },
+      {
+        "name": "Unsalted butter, softened",
+        "amount": "1/2 cup"
+      },
+      {
+        "name": "Vanilla extract",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "Whole milk",
+        "amount": "1 cup"
+      },
+      {
+        "name": "Granulated sugar",
+        "amount": "1/2 cup"
+      },
+      {
+        "name": "Cornstarch",
+        "amount": "1/4 cup"
+      },
+      {
+        "name": "Egg yolks",
+        "amount": "4"
+      },
+      {
+        "name": "Unsalted butter, softened",
+        "amount": "1/2 cup"
+      },
+      {
+        "name": "Vanilla extract",
+        "amount": "1 tsp"
+      },
+      {
+        "name": "Whole milk",
+        "amount": "1 cup"
+      },
+      {
+        "name": "Granulated sugar",
+        "amount": "1/2 cup"
+      },
+      {
+        "name": "Cornstarch"
+      }
+    ],
+    "steps": [
+      "1. In a large mixing bowl, combine the milk, sugar, and yeast. Let sit for 5 minutes, or until foamy.\n2. Add the flour, salt, eggs, butter, and vanilla extract. Mix until well combined.\n3. Cover and let rise for 1 hour, or until doubled in size.\n4. Punch down the dough and divide into 12 equal pieces. Roll each piece into a ball and place on a parchment-lined baking sheet.\n5. Cover and let rise for 30 minutes, or until doubled in size.\n6. Preheat the oven to 350°F (180°C). Bake for 15-20 minutes, or until golden brown.\n7. To make the custard, combine the milk, sugar, and cornstarch in a medium saucepan. Cook over medium heat, stirring constantly, until thickened.\n8. Remove from heat and stir in the butter and vanilla extract.\n9. Transfer to a bowl and cover with plastic wrap, pressing the plastic wrap directly onto the surface of the custard. Refrigerate until chilled.\n10. To make the chocolate glaze, combine the chocolate and butter in a microwave-safe bowl. Microwave in 30-second intervals, stirring after each interval, until melted and smooth.\n11. Dip the doughnuts in the chocolate glaze and let set for 10 minutes.\n12. Fill a piping bag fitted with a round tip with the custard. Poke a hole in the side of each doughnut and fill with the custard.\n13. Serve immediately."
+    ],
+    "image": "https://sugarspunrun.com/wp-content/uploads/2022/02/Boston-Cream-Pie-Donuts-1-of-4.jpg",
+    "cuisine": "American"
   }
 ]
