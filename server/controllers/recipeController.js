@@ -30,8 +30,20 @@ async function importRecipesFromJson() {
 })();
 
 router.get("/recipes", async (req, res) => {
-  const recipes = await Recipe.findAll();
-  res.json(recipes);
+  const page = parseInt(req.query.page) || 1; // Parse the page query parameter as an integer
+  const size = parseInt(req.query.size) || 12; // Parse the size query parameter as an integer
+
+  const totalCount = await Recipe.count(); // Get the total count of recipes
+
+  const recipes = await Recipe.findAll({
+    offset: (page - 1) * size,
+    limit: size,
+  });
+
+  res.json({
+    recipes,
+    totalCount,
+  });
 });
 
 router.get("/recipes/:id", async (req, res) => {

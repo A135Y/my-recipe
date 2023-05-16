@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button, Input, Layout, Row, Col, Typography } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import { RecipeList } from "./RecipeList";
+import { RecipePagination } from "./RecipePagination";
 import { SearchResults } from "./SearchResults";
 import "./Home.css";
 import logo from "../images/logo.jpg";
@@ -13,19 +14,24 @@ const Home = () => {
   const [recipes, setRecipes] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [showExtraText, setShowExtraText] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalRecipes, setTotalRecipes] = useState(0); // Add totalRecipes state
 
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const response = await fetch("http://localhost:3000/recipes");
+        const response = await fetch(
+          `http://localhost:3000/recipes?page=${currentPage}`
+        );
         const data = await response.json();
-        setRecipes(data);
+        setRecipes(data.recipes);
+        setTotalRecipes(data.totalCount); // Update totalRecipes state
       } catch (error) {
         console.error(error);
       }
     };
     fetchRecipes();
-  }, []);
+  }, [currentPage]); // Add currentPage as a dependency
 
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
@@ -35,6 +41,10 @@ const Home = () => {
   const handleGoBack = () => {
     setSearchQuery("");
     setShowExtraText(false);
+  };
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
   };
 
   return (
@@ -60,7 +70,11 @@ const Home = () => {
           </Col>
         </Row>
         {searchQuery === "" ? (
-          <RecipeList recipes={recipes} />
+          <RecipeList
+            currentPage={currentPage}
+            pageSize={12}
+            recipes={recipes}
+          />
         ) : (
           <SearchResults
             recipes={recipes}
@@ -86,6 +100,13 @@ const Home = () => {
             <Button onClick={handleGoBack}>Go back</Button>
           </div>
         )}
+        <RecipePagination
+          total={totalRecipes} // Use totalRecipes state as the total value
+          pageSize={12}
+          current={currentPage}
+          onChange={handlePageChange}
+          showSizeChanger={false}
+        />
       </Content>
     </Layout>
   );
