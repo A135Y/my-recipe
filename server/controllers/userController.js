@@ -18,6 +18,8 @@ router.get("/users/:id", async (req, res) => {
 
 router.post("/users", async (req, res) => {
   const user = await User.create(req.body);
+  //use a security method to prevent injection attacks
+
   const hashedPassword = await bcrypt.hash(user.password, SALT_COUNT);
   user.password = hashedPassword;
   await user.save();
