@@ -1,6 +1,5 @@
 import { Button, Typography, Row, Col } from "antd";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import recipe1 from "../images/cinnamon-rolls.jpeg";
 import recipe2 from "../images/vanilla-cheesecake.jpeg";
 import recipe3 from "../images/Crumble-Churro-Cookies.jpeg";
@@ -10,7 +9,6 @@ import "./LandingPage.css";
 import { Register } from "./Register";
 
 const LandingPage = () => {
-  const navigate = useNavigate();
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
 

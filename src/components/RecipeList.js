@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Row, Col, Card } from "antd";
 import "./RecipeList.css";
 import { RecipePagination } from "./RecipePagination";
@@ -59,7 +59,10 @@ const RecipeList = () => {
                   }
                 />
                 <p>Cuisine: {recipe.cuisine}</p>
-                <a onClick={() => handleRecipeClick(recipe)}>
+                <a
+                  href="/landing-page-recipe"
+                  onClick={() => handleRecipeClick(recipe)}
+                >
                   {selectedRecipe === recipe ? "See Less" : "See More"}
                 </a>
               </Card>
