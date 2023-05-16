@@ -7,13 +7,13 @@ Save recipes to your personal collection
 Follow other users and discover new recipes
 Like, comment, and rate recipes
 Personalized recipe recommendations based on your interests and behavior
-The personalized recipe recommendations are generated using machine learning algorithms that analyze user behavior on the platform. The algorithms consider factors such as the user's search history, saved recipes, and ratings, as well as the popularity and relevance of the recipes.
+The personalized recipe recommendations are generated using machine learning algorithms that analyze user behavior on the platform. The algorithms consider factors such as the user's search history, saved recipes, and ratings, as well as the popularity and relevance of the recipes.\n
 
-Technologies Used
-React: A JavaScript library for building user interfaces
-Node.js: A JavaScript runtime for building server-side applications
-Express: A web framework for Node.js
-SQLite3: A relational database management system
+Technologies Used\n
+React: A JavaScript library for building user interfaces\n
+Node.js: A JavaScript runtime for building server-side applications\n
+Express: A web framework for Node.js\n
+SQLite3: A relational database management system\n
 Azure: A cloud computing platform for hosting and deploying web applications
 TensorFlow: An open-source machine learning framework
 Python: A programming language for data analysis and machine learning
