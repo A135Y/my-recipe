@@ -2,6 +2,9 @@
 const express = require("express");
 const router = express.Router();
 const { User } = require("../models/user");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const SALT_COUNT = 10;
 
 router.get("/users", async (req, res) => {
   const users = await User.findAll();
@@ -15,11 +18,16 @@ router.get("/users/:id", async (req, res) => {
 
 router.post("/users", async (req, res) => {
   const user = await User.create(req.body);
+  const hashedPassword = await bcrypt.hash(user.password, SALT_COUNT);
+  user.password = hashedPassword;
+  await user.save();
   res.json(user);
 });
 
 router.put("/users/:id", async (req, res) => {
   const user = await User.findByPk(req.params.id);
+  const hashedPassword = await bcrypt.hash(user.password, SALT_COUNT);
+  user.password = hashedPassword;
   await user.update(req.body);
   res.json(user);
 });

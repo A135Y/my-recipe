@@ -13,10 +13,10 @@ app.use(recipeController, userController);
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).send('Something went wrong!');
+  res.status(500).send("Something went wrong!");
 });
 
-const port = process.env.PORT
+const port = process.env.PORT;
 
 sequelize.sync().then(() => {
   app.listen(port, () => {
@@ -24,4 +24,4 @@ sequelize.sync().then(() => {
   });
 });
 
-module.exports = { port: port, app }
+module.exports = { port: port, app };

@@ -7,75 +7,75 @@ import { RecipePagination } from "./RecipePagination";
 const { Meta } = Card;
 
 const RecipeList = () => {
-    const [recipes, setRecipes] = useState([]);
-    const [selectedRecipe, setSelectedRecipe] = useState(null);
+  const [recipes, setRecipes] = useState([]);
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
 
-    useEffect(() => {
-        const fetchRecipes = async () => {
-            try {
-                const response = await fetch("http://localhost:3000/recipes");
-                const data = await response.json();
-                setRecipes(data);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-
-        fetchRecipes();
-    }, []);
-
-    console.log(recipes.map((recipe) => recipe));
-
-    const handleRecipeClick = (recipe) => {
-        if (selectedRecipe === recipe) {
-            setSelectedRecipe(null);
-        } else {
-            setSelectedRecipe(recipe);
-        }
+  useEffect(() => {
+    const fetchRecipes = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/recipes");
+        const data = await response.json();
+        setRecipes(data);
+      } catch (error) {
+        console.error(error);
+      }
     };
 
-    return (
-        <BrowserRouter>
-            <Row gutter={[24, 24]} className="cardRow">
-                {recipes.map((recipe) => (
-                    <Col key={recipe.id} xs={24} sm={12} md={8} lg={6} className="Col">
-                        <Link to={`/recipes/${recipe.id}`}>
-                            <Card
-                                hoverable
-                                cover={
-                                    <img
-                                        alt={recipe.title}
-                                        src={recipe.image}
-                                        className="cardImage"
-                                    />
-                                }
-                            >
-                                <Meta
-                                    title={recipe.title}
-                                    description={
-                                        selectedRecipe === recipe
-                                            ? recipe.description
-                                            : `${recipe.description.substring(0, 70)}...`}
-                                />
-                                <p>Cuisine: {recipe.cuisine}</p>
-                                <a onClick={() => handleRecipeClick(recipe)}>
-                                    {selectedRecipe === recipe ? "See Less" : "See More"}
-                                </a>
-                            </Card>
-                        </Link>
-                    </Col>
-                ))}
-            </Row>
-            <RecipePagination
-                total={recipes.length}
-                pageSize={8}
-                current={1}
-                onChange={() => { }
+    fetchRecipes();
+  }, []);
+
+  console.log(recipes.map((recipe) => recipe));
+
+  const handleRecipeClick = (recipe) => {
+    if (selectedRecipe === recipe) {
+      setSelectedRecipe(null);
+    } else {
+      setSelectedRecipe(recipe);
+    }
+  };
+
+  return (
+    <>
+      <Row gutter={[24, 24]} className="cardRow">
+        {recipes.map((recipe) => (
+          <Col key={recipe.id} xs={24} sm={12} md={8} lg={6} className="Col">
+            <Link to={`/recipes/${recipe.id}`}>
+              <Card
+                hoverable
+                cover={
+                  <img
+                    alt={recipe.title}
+                    src={recipe.image}
+                    className="cardImage"
+                  />
                 }
-                showSizeChanger={false}
-            />
-        </BrowserRouter>
-    );
+              >
+                <Meta
+                  title={recipe.title}
+                  description={
+                    selectedRecipe === recipe
+                      ? recipe.description
+                      : `${recipe.description.substring(0, 70)}...`
+                  }
+                />
+                <p>Cuisine: {recipe.cuisine}</p>
+                <a onClick={() => handleRecipeClick(recipe)}>
+                  {selectedRecipe === recipe ? "See Less" : "See More"}
+                </a>
+              </Card>
+            </Link>
+          </Col>
+        ))}
+      </Row>
+      <RecipePagination
+        total={recipes.length}
+        pageSize={8}
+        current={1}
+        onChange={() => {}}
+        showSizeChanger={false}
+      />
+    </>
+  );
 };
 
 export { RecipeList };
