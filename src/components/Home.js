@@ -7,7 +7,7 @@ import "./Home.css";
 import logo from "../images/logo.jpg";
 
 const { Title } = Typography;
-const { Header, Content } = Layout;
+const { Content } = Layout;
 
 const Home = () => {
   const [recipes, setRecipes] = useState([]);

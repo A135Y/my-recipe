@@ -4,7 +4,6 @@ import {
   Checkbox,
   Form,
   Input,
-  Select,
   Row,
   Col,
   Divider,
@@ -20,12 +19,10 @@ import {
   PlusOutlined,
 } from "@ant-design/icons";
 
-const { Option } = Select;
-
 const Register = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
+  // const [showPassword, setShowPassword] = useState(false);
   const [bio, setBio] = useState("");
   const [profilePicture, setProfilePicture] = useState(null);
 
@@ -231,8 +228,9 @@ const Register = () => {
           </Form.Item>
           <Form.Item>
             <Checkbox>
-              I have read and agree to the <a href="#">terms of service</a> and{" "}
-              <a href="#">privacy policy</a>
+              I have read and agree to the{" "}
+              <a href="/terms-and-conditions">terms of service</a> and{" "}
+              <a href="/privacy-policy">privacy policy</a>
             </Checkbox>
           </Form.Item>
           <Form.Item>

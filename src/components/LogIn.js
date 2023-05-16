@@ -20,7 +20,7 @@ import {
 const LogIn = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
+  // const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = (values) => {
     setLoading(true);
@@ -80,7 +80,7 @@ const LogIn = () => {
 
           <Form.Item>
             <Checkbox disabled={loading}>Remember me</Checkbox>
-            <a href="#" style={{ float: "right" }}>
+            <a href="/remember-me" style={{ float: "right" }}>
               Forgot password
             </a>
           </Form.Item>
