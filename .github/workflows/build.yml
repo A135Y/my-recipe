@@ -7,8 +7,6 @@ on:
 
 env:
   AZURE_WEBAPP_NAME: MyRecipePal
-  IMAGE_NAME: <your-image-name>
-  IMAGE_TAG: ${{ github.sha }}
 
 jobs:
   test:
@@ -45,14 +43,13 @@ jobs:
           node-version: "16.x"
       - run: npm ci
       - run: npm run build
-      - name: Docker build and push
-        uses: docker/build-push-action@v2
+      - name: Azure Login
+        uses: azure/login@v1
         with:
-          context: .
-          push: true
-          tags: ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+          creds: ${{ env.AZURE_CREDENTIALS }}
       - name: Azure Web App deploy
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          images: "${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}"
+        run: az webapp deployment source config-zip --resource-group ${{ env.AZURE_RESOURCE_GROUP }} --name ${{ env.AZURE_WEBAPP_NAME }} --src ./build.zip
+
+
+
+

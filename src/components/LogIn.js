@@ -16,6 +16,8 @@ import {
   EyeInvisibleOutlined,
   EyeTwoTone,
 } from "@ant-design/icons";
+import { GoogleLogin } from '@react-oauth/google';
+
 
 const LogIn = () => {
   const [form] = Form.useForm();
@@ -28,6 +30,13 @@ const LogIn = () => {
       message.success("Login successful");
       setLoading(false);
     }, 2000);
+  };
+
+  const responseMessage = (response) => {
+    console.log(response);
+  };
+  const errorMessage = (error) => {
+    console.log(error);
   };
 
   return (
@@ -96,6 +105,7 @@ const LogIn = () => {
               Login
             </Button>
           </Form.Item>
+          <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
         </Form>
       </Col>
     </Row>
