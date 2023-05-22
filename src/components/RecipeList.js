@@ -5,7 +5,7 @@ import "./RecipeList.css";
 
 const { Meta } = Card;
 
-const RecipeList = ({ currentPage, pageSize, recipes }) => {
+const RecipeList = ({ recipes }) => {
   const [selectedRecipe, setSelectedRecipe] = useState(null);
 
   const handleRecipeClick = (recipe) => {

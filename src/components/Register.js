@@ -1,59 +1,68 @@
 import React, { useState } from "react";
-import {
-  Button,
-  Checkbox,
-  Form,
-  Input,
-  Row,
-  Col,
-  Divider,
-  message,
-  Upload,
-} from "antd";
+import { Form, Input, Button, message, Row, Col, Divider } from "antd";
 import {
   UserOutlined,
-  LockOutlined,
   MailOutlined,
   EyeInvisibleOutlined,
   EyeTwoTone,
-  PlusOutlined,
+  LockOutlined,
 } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
-  // const [showPassword, setShowPassword] = useState(false);
   const [bio, setBio] = useState("");
-  const [profilePicture, setProfilePicture] = useState(null);
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const onFinish = (values) => {
+  const onFinish = async () => {
     setLoading(true);
-    setTimeout(() => {
-      message.success("Registration successful");
+
+    try {
+      const user = {
+        username,
+        email,
+        password,
+        bio,
+      };
+
+      const response = await fetch("http://localhost:3000/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      });
+
+      console.log("response: ", response);
+      if (response.ok) {
+        message.success("Registration successful");
+        form.resetFields();
+        navigate("/"); // Redirect to "/home" endpoint
+      } else if (response.status === 400) {
+        const responseData = await response.json();
+        const fieldErrors = [];
+        for (const field in responseData.errors) {
+          const errors = responseData.errors[field];
+          fieldErrors.push({
+            name: field,
+            errors: Array.isArray(errors) ? errors : [errors],
+          });
+        }
+        form.setFields(fieldErrors);
+      } else {
+        console.error("Registration failed");
+        message.error("Registration failed");
+      }
+    } catch (error) {
+      console.error(error);
+      message.error("Registration failed");
+    } finally {
       setLoading(false);
-    }, 2000);
-  };
-
-  const handleBioChange = (event) => {
-    setBio(event.target.value);
-  };
-
-  const handleProfilePictureChange = (info) => {
-    if (info.file.status === "done") {
-      setProfilePicture(info.file.originFileObj);
     }
-  };
-
-  const beforeProfilePictureUpload = (file) => {
-    const isJpgOrPng = file.type === "image/jpeg" || file.type === "image/png";
-    if (!isJpgOrPng) {
-      message.error("You can only upload JPG/PNG file!");
-    }
-    const isLt2M = file.size / 1024 / 1024 < 2;
-    if (!isLt2M) {
-      message.error("Image must be smaller than 2MB!");
-    }
-    return isJpgOrPng && isLt2M;
   };
 
   return (
@@ -84,6 +93,7 @@ const Register = () => {
               placeholder="Enter your username"
               autoFocus
               disabled={loading}
+              onChange={(event) => setUsername(event.target.value)}
             />
           </Form.Item>
           <Form.Item
@@ -104,6 +114,7 @@ const Register = () => {
               prefix={<MailOutlined />}
               placeholder="Enter your email"
               disabled={loading}
+              onChange={(event) => setEmail(event.target.value)}
             />
           </Form.Item>
           <Form.Item
@@ -112,37 +123,61 @@ const Register = () => {
             rules={[
               {
                 required: true,
-                message: "Please enter your password!",
+                message: "Please enter your password",
+              },
+              {
+                min: 8,
+                message: "Password must be at least 8 characters",
+              },
+              {
+                // Regex for password with at least one uppercase letter, one lowercase letter, and one number
+                pattern: /^(?=.*[a-z])/,
+                message: "Password must contain at least one lowercase letter",
+              },
+              {
+                // Regex for password with at least one lowercase letter
+                pattern: /^(?=.*[A-Z])/,
+                message: "Password must contain at least one uppercase letter",
+              },
+              {
+                // Regex for password with at least one number
+                pattern: /^(?=.*\d)/,
+                message: "Password must contain at least one number",
+              },
+              {
+                // Regex for password with at least one special character
+                pattern: /[\W_]/,
+                message: "Password must contain at least one special character",
               },
             ]}
-            hasFeedback
           >
             <Input.Password
               prefix={<LockOutlined />}
               placeholder="Enter your password"
+              disabled={loading}
               iconRender={(visible) =>
                 visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
               }
-              disabled={loading}
+              onChange={(event) => setPassword(event.target.value)}
             />
           </Form.Item>
           <Form.Item
-            name="confirm"
+            name="confirmPassword"
             label="Confirm Password"
             dependencies={["password"]}
-            hasFeedback
             rules={[
               {
                 required: true,
-                message: "Please confirm your password!",
+                message: "Please confirm your password",
               },
               ({ getFieldValue }) => ({
                 validator(_, value) {
                   if (!value || getFieldValue("password") === value) {
                     return Promise.resolve();
                   }
+
                   return Promise.reject(
-                    new Error("The two passwords do not match!")
+                    new Error("The two passwords do not match")
                   );
                 },
               }),
@@ -151,27 +186,10 @@ const Register = () => {
             <Input.Password
               prefix={<LockOutlined />}
               placeholder="Confirm your password"
+              disabled={loading}
               iconRender={(visible) =>
                 visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
               }
-              disabled={loading}
-            />
-          </Form.Item>
-          <Form.Item
-            name="phone"
-            label="Phone Number"
-            rules={[
-              {
-                required: true,
-                message: "Please enter your phone number!",
-              },
-            ]}
-          >
-            <Input
-              style={{ width: "100%" }}
-              type="number"
-              placeholder="Enter your phone number"
-              disabled={loading}
             />
           </Form.Item>
           <Form.Item
@@ -187,54 +205,13 @@ const Register = () => {
             <Input.TextArea
               rows={4}
               value={bio}
-              onChange={handleBioChange}
+              onChange={(event) => setBio(event.target.value)}
               placeholder="Tell us about yourself"
               disabled={loading}
             />
           </Form.Item>
-          <Form.Item
-            name="profilePicture"
-            label="Profile Picture"
-            valuePropName="fileList"
-            getValueFromEvent={(e) => e.fileList}
-            rules={[
-              {
-                required: true,
-                message: "Please upload your profile picture",
-              },
-            ]}
-          >
-            <Upload
-              name="profilePicture"
-              listType="picture-card"
-              showUploadList={false}
-              beforeUpload={beforeProfilePictureUpload}
-              onChange={handleProfilePictureChange}
-              disabled={loading}
-            >
-              {profilePicture ? (
-                <img
-                  src={URL.createObjectURL(profilePicture)}
-                  alt="profile"
-                  style={{ width: "100%" }}
-                />
-              ) : (
-                <div>
-                  <PlusOutlined />
-                  <div style={{ marginTop: 8 }}>Upload</div>
-                </div>
-              )}
-            </Upload>
-          </Form.Item>
           <Form.Item>
-            <Checkbox>
-              I have read and agree to the{" "}
-              <a href="/terms-and-conditions">terms of service</a> and{" "}
-              <a href="/privacy-policy">privacy policy</a>
-            </Checkbox>
-          </Form.Item>
-          <Form.Item>
-            <Button type="primary" htmlType="submit" loading={loading} block>
+            <Button type="primary" htmlType="submit" loading={loading}>
               Register
             </Button>
           </Form.Item>

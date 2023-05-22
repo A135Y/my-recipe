@@ -1,47 +1,53 @@
-import { Button, Typography, Row, Col } from "antd";
 import React, { useState } from "react";
+import { Typography, Row, Col } from "antd";
 import recipe1 from "../images/cinnamon-rolls.jpeg";
 import recipe2 from "../images/vanilla-cheesecake.jpeg";
 import recipe3 from "../images/Crumble-Churro-Cookies.jpeg";
-import logo from "../images/logo.jpg";
-import { LogIn } from "./LogIn";
 import "./LandingPage.css";
-import { Register } from "./Register";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
-  const [showLogin, setShowLogin] = useState(false);
-  const [showRegister, setShowRegister] = useState(false);
+  const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Add state to track login status
 
-  const handleLogIn = () => {
-    setShowLogin(true);
+  const handleLogin = () => {
+    // Logic for handling login
+    setIsLoggedIn(true);
+    // Perform any other necessary actions
   };
 
-  const handleSignup = () => {
-    setShowRegister(true);
+  const handleLogout = () => {
+    // Logic for handling logout
+    setIsLoggedIn(false);
+    // Perform any other necessary actions
   };
-
-  if (showLogin) {
-    return <LogIn />;
-  }
-
-  if (showRegister) {
-    return <Register />;
-  }
 
   return (
     <div className="landing-page">
       {/* Navigation Bar */}
       <div className="nav-bar">
         <div className="header">
-          <img src={logo} alt="MyRecipes" className="logo" />
-          <div className="buttons">
-            <Button className="login-button" onClick={handleLogIn}>
-              Login
-            </Button>
-            <Button className="signup-button" onClick={handleSignup}>
-              Sign Up
-            </Button>
-          </div>
+          {/* ... */}
+          {isLoggedIn ? (
+            <button className="logout-button" onClick={handleLogout}>
+              Logout
+            </button>
+          ) : (
+            <>
+              <button
+                className="login-button"
+                onClick={() => navigate("/login")}
+              >
+                Login
+              </button>
+              <button
+                className="signup-button"
+                onClick={() => navigate("/register")}
+              >
+                Sign Up
+              </button>
+            </>
+          )}
         </div>
       </div>
       {/* Introduction */}
@@ -72,9 +78,12 @@ const LandingPage = () => {
                 <Typography.Title level={4} className="recipe-title">
                   Cinnamon Rolls
                 </Typography.Title>
-                <Button className="recipe-button" onClick={handleLogIn}>
+                <button
+                  className="recipe-button"
+                  onClick={() => navigate("/login")}
+                >
                   View Recipe
-                </Button>
+                </button>
               </div>
             </div>
           </Col>
@@ -85,9 +94,12 @@ const LandingPage = () => {
                 <Typography.Title level={4} className="recipe-title">
                   Madagascan Vanilla Cheesecake
                 </Typography.Title>
-                <Button className="recipe-button" onClick={handleLogIn}>
+                <button
+                  className="recipe-button"
+                  onClick={() => navigate("/login")}
+                >
                   View Recipe
-                </Button>
+                </button>
               </div>
             </div>
           </Col>
@@ -98,9 +110,12 @@ const LandingPage = () => {
                 <Typography.Title level={4} className="recipe-title">
                   Crumble Churro Cookies
                 </Typography.Title>
-                <Button className="recipe-button" onClick={handleLogIn}>
+                <button
+                  className="recipe-button"
+                  onClick={() => navigate("/login")}
+                >
                   View Recipe
-                </Button>
+                </button>
               </div>
             </div>
           </Col>
@@ -109,4 +124,5 @@ const LandingPage = () => {
     </div>
   );
 };
+
 export { LandingPage };

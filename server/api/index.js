@@ -19,7 +19,8 @@ app.use((err, req, res, next) => {
 const port = process.env.PORT;
 
 sequelize.sync().then(() => {
-  app.listen(port, () => {
+  app.listen(port, async () => {
+    await sequelize.sync({ force: true }); // recreate db
     console.log(`Server is running on port ${port}`);
   });
 });

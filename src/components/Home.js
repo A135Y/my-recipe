@@ -4,7 +4,6 @@ import { SearchOutlined } from "@ant-design/icons";
 import { RecipeList } from "./RecipeList";
 import { RecipePagination } from "./RecipePagination";
 import { SearchResults } from "./SearchResults";
-import "./Home.css";
 import logo from "../images/logo.jpg";
 
 const { Title } = Typography;
