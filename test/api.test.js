@@ -160,6 +160,18 @@ describe("DELETE /recipes/:id", () => {
   });
 });
 
+describe("POST", "/register", () => {
+  test("Registers a new user", async () => {
+    const response = await request(app).post("/register").send({
+      email: "testemail.com",
+      username: "testuser",
+      password: "password",
+      bio: "test bio",
+    });
+    expect(response.status).toBe(200);
+  });
+});
+
 afterAll(async () => {
   await sequelize.close();
 });

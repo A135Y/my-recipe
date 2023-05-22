@@ -39,7 +39,6 @@ router.get("/recipes", async (req, res) => {
     offset: (page - 1) * size,
     limit: size,
   });
-
   res.json({
     recipes,
     totalCount,

@@ -10,11 +10,11 @@ const LandingPage = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Add state to track login status
 
-  const handleLogin = () => {
-    // Logic for handling login
-    setIsLoggedIn(true);
-    // Perform any other necessary actions
-  };
+  // const handleLogin = () => {
+  //   // Logic for handling login
+  //   setIsLoggedIn(true);
+  //   // Perform any other necessary actions
+  // };
 
   const handleLogout = () => {
     // Logic for handling logout
