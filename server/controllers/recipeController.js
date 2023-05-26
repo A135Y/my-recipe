@@ -4,7 +4,6 @@ const { Recipe } = require("../models/recipe");
 const jsonfile = require("jsonfile");
 const { sequelize } = require("../database/db");
 require("dotenv").config();
-const RECIPES_JSON_FILE = process.env.RECIPES_JSON_FILE;
 const path = require("path");
 
 async function importRecipesFromJson() {
@@ -67,4 +66,4 @@ router.delete("/recipes/:id", async (req, res) => {
   res.json(recipe);
 });
 
-module.exports = router;
+module.exports = { importRecipesFromJson, router }

@@ -1,3 +1,4 @@
+// server/api/index.js
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -7,7 +8,9 @@ app.use(express.urlencoded({ extended: true }));
 const { sequelize } = require("../database/db");
 const recipeController = require("../controllers/recipeController");
 const userController = require("../controllers/userController");
+const { importRecipesFromJson } = require("../controllers/recipeController"); // Import the function
 require("dotenv").config();
+
 
 app.use(recipeController, userController);
 
@@ -18,11 +21,16 @@ app.use((err, req, res, next) => {
 
 const port = process.env.PORT;
 
-sequelize.sync().then(() => {
-  app.listen(port, async () => {
-    await sequelize.sync({ force: true }); // recreate db
-    console.log(`Server is running on port ${port}`);
+sequelize.sync({ force: true })
+  .then(() => importRecipesFromJson())
+  .then(() => {
+    app.listen(port, () => {
+      console.log(`Server is running on port ${port}`);
+    });
+  })
+  .catch((error) => {
+    console.error("Error syncing database and importing recipes:", error);
   });
-});
+
 
 module.exports = { port: port, app };
